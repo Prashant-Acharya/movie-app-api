@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "main": "app.js",
   "author": "Prashant Acharya",
+  "scripts": {
+    "start":"node app.js"
+  },
   "license": "MIT",
   "dependencies": {
     "express": "^4.16.4"
