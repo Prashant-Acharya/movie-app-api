@@ -2,7 +2,7 @@ const express = require('express')
 const router = express.Router()
 const Movie = require('../models/movie')
 
-router.post('/', (req, res) => {
+router.post('/', async (req, res) => {
 	const movie = new Movie({
 		title: req.body.title,
 		release: req.body.release,
@@ -12,11 +12,15 @@ router.post('/', (req, res) => {
 		country: req.body.country
 	})
 
-	movie.save()
-		.then(data => {
-			res.json(data)
+	
+	try{
+		const savedMovie = await movie.save()
+		res.json(savedMovie)
+	} catch (err) {
+		res.json({
+			messages: err
 		})
-		.catch(err => console.log(err))
+	}
 })
 
 module.exports = router
