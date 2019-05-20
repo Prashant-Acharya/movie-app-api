@@ -4,10 +4,11 @@
   "main": "app.js",
   "author": "Prashant Acharya",
   "scripts": {
-    "start":"node app.js"
+    "start": "node app.js"
   },
   "license": "MIT",
   "dependencies": {
-    "express": "^4.16.4"
+    "express": "^4.16.4",
+    "mongoose": "^5.5.9"
   }
 }
