@@ -2,8 +2,14 @@ const express = require('express')
 const app = express()
 const mongoose = require('mongoose')
 const bodyParser = require('body-parser')
+const cors = require('express-cors')
 
 app.use(bodyParser.json())
+app.use(cors({
+	allowedOrigins: [
+		'localhost:3000'
+	]
+}))
 
 // Import Routes
 const movieRoutes = require('./routes/getmovies')
